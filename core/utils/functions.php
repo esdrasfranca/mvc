@@ -7,6 +7,8 @@ function dd(...$vars)
     $line = $backtrace[0]['line'] ?? '0';
 
     echo '<style>
+        /* Estilos Globais */
+        body {background: #0f172a;}
         .dd-container { background: #0f172a; color: #e2e8f0; padding: 0; font-family: "JetBrains Mono", monospace; border-radius: 12px; margin: 20px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border: 1px solid #1e293b; overflow: hidden; }
         
         /* Ajuste das Tabs */
