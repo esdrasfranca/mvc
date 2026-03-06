@@ -1,22 +1,19 @@
 <?php
 
-require_once __DIR__ . '/../core/View.php';
-require_once __DIR__ . '/../core/controllers/ErrorController.php';
-require_once __DIR__ . '/../controllers/HomeController.php';
-require_once __DIR__ . '/../controllers/NoticiaController.php';
+namespace Core;
+
+use Core\Controllers\ErrorController;
 
 class Router
 {
-    public function dispatch($url)
+    public static function dispatch($url)
     {
         $url = trim($url, '/');
         $parts = $url ? explode('/', $url) : [];
 
-        $controllerName = $parts[0] ?? 'Home';
-        $controllerName = ucfirst($controllerName) . 'Controller';
+        $controllerName = 'App\\Controllers\\' . (ucfirst($parts[0] ?? 'Home')) . 'Controller';
 
         if (class_exists($controllerName)) {
-
             $methodName = $parts[1] ?? 'index';
             $methodName = lcfirst($methodName);
 
@@ -27,15 +24,15 @@ class Router
                 call_user_func_array([new $controllerName(), $methodName], $params);
             } else {
                 // Método não encontrado
-                $this->notFound();
+                self::notFound();
             }
         } else {
             // Controlador não encontrado
-            $this->notFound();
+            self::notFound();
         }
     }
 
-    private function notFound()
+    private static function notFound()
     {
         ErrorController::error404();
     }

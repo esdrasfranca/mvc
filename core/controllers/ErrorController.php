@@ -1,5 +1,7 @@
 <?php
 
+namespace Core\Controllers;
+
 class ErrorController
 {
 
@@ -31,7 +33,7 @@ class ErrorController
         $view = $viewDefault;
 
         if (!empty(ERRORS_VIEWS[$code])) {
-            $view = __DIR__ . '/../../views/' . ERRORS_VIEWS[$code] . '.php';
+            $view = __DIR__ . '/../../app/views/' . ERRORS_VIEWS[$code] . '.php';
 
             if (!file_exists($view)) {
                 // Se a view personalizada não existir, usar a view padrão

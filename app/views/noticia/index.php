@@ -17,6 +17,10 @@
         <?php endforeach; ?>
     </ul>
 
+    <hr>
+
+    <p><a href="<?= BASE_URL ?>">Voltar para Home</a></p>
+
 
 </body>
 

@@ -1,5 +1,9 @@
 <?php
-require_once __DIR__ . '/../models/Noticia.php';
+
+namespace App\Controllers;
+
+use App\Models\Noticia;
+use Core\View;
 
 class NoticiaController
 {

@@ -11,6 +11,9 @@
     <h1><?= $noticia['title'] ?></h1>
     <hr>
     Conteúdo da notícia aqui...
+
+    <hr>
+    <p><a href="<?= BASE_URL . '/noticia' ?>">Voltar para Notícias</a></p>
 </body>
 
 </html>

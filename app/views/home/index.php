@@ -9,13 +9,8 @@
 
 <body>
     <h1>Home page</h1>
-    <p>Usuários</p>
     <hr>
-    <ul>
-        <?php foreach ($users as $usuario) : ?>
-            <li><?= $usuario['name'] ?></li>
-        <?php endforeach; ?>
-    </ul>
+    <p> <a href="<?= BASE_URL . '/noticia' ?>">Notícias</a> </p>
 </body>
 
 </html>

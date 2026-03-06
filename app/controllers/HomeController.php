@@ -1,18 +1,14 @@
 <?php
 
-require_once __DIR__ . '/../core/View.php';
-require_once __DIR__ . '/../models/Usuario.php';
+namespace App\Controllers;
+
+use Core\View;
 
 class HomeController
 {
     public function index()
     {
-        $usuario = new Usuario();
-        return View::render('home/index', ['users' => $usuario->getAll(), 'title' => 'Home']);
-    }
 
-    public function sobre()
-    {
-        echo "Página sobre nós";
+        return View::render('home/index');
     }
 }
