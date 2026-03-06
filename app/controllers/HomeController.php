@@ -8,7 +8,6 @@ class HomeController
 {
     public function index()
     {
-
         return View::render('home/index');
     }
 }
