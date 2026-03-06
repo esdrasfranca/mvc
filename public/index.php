@@ -1,5 +1,5 @@
 <?php
-require_once '../app/config/includes.php';
+require_once '../core/utils/includes.php';
 
 use Core\Router;
 
