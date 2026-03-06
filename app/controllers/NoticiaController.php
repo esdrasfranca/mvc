@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Noticia;
+use Core\Router;
 use Core\View;
 
 class NoticiaController
@@ -21,8 +22,7 @@ class NoticiaController
             return View::render('noticia/ver', ['noticia' => $noticia]);
         } else {
             // Redirecionar para a página de notícias se a notícia não for encontrada 
-            header("Location: " . BASE_URL . "/noticia");
-            exit();
+            Router::redirect('noticia');
         }
     }
 }

@@ -32,6 +32,12 @@ class Router
         }
     }
 
+    public static function redirect(string $url)
+    {
+        header("Location: " . BASE_URL . '/' . $url);
+        exit();
+    }
+
     private static function notFound()
     {
         ErrorController::error404();
